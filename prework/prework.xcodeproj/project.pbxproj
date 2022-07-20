@@ -16,6 +16,7 @@
 		A4C2C2F82887E33000196453 /* preworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C2C2F72887E33000196453 /* preworkTests.swift */; };
 		A4C2C3022887E33000196453 /* preworkUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C2C3012887E33000196453 /* preworkUITests.swift */; };
 		A4C2C3042887E33000196453 /* preworkUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C2C3032887E33000196453 /* preworkUITestsLaunchTests.swift */; };
+		A4C2C3132887EC1400196453 /* TipCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C2C3122887EC1400196453 /* TipCalculator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		A4C2C2FD2887E33000196453 /* preworkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = preworkUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4C2C3012887E33000196453 /* preworkUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = preworkUITests.swift; sourceTree = "<group>"; };
 		A4C2C3032887E33000196453 /* preworkUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = preworkUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A4C2C3122887EC1400196453 /* TipCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipCalculator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				A4C2C2E92887E33000196453 /* Assets.xcassets */,
 				A4C2C2EB2887E33000196453 /* LaunchScreen.storyboard */,
 				A4C2C2EE2887E33000196453 /* Info.plist */,
+				A4C2C3122887EC1400196453 /* TipCalculator.swift */,
 			);
 			path = prework;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 				A4C2C2E52887E32E00196453 /* ViewController.swift in Sources */,
 				A4C2C2E12887E32E00196453 /* AppDelegate.swift in Sources */,
 				A4C2C2E32887E32E00196453 /* SceneDelegate.swift in Sources */,
+				A4C2C3132887EC1400196453 /* TipCalculator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

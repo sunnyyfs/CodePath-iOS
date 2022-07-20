@@ -13,26 +13,62 @@ class ViewController: UIViewController {
     @IBOutlet weak var billAmountTextField: UITextField!
     
     @IBOutlet weak var tipAmountLabel: UILabel!
+    @IBOutlet weak var tipAmountSlider: UISlider!
+    @IBOutlet weak var tipAmountSliderValue: UILabel!
     
-    @IBOutlet weak var tipControl: UISegmentedControl!
+    @IBOutlet weak var splitSliderValue: UILabel!
+    @IBOutlet weak var splitSlider: UISlider!
     
     @IBOutlet weak var totalLabel: UILabel!
+    @IBOutlet weak var splitTotalLabel: UILabel!
+    
+    //default tip is 10%
+    var tc = TipCalculator(billAmountBeforeTax: 0, tipPercentage: 0.1)
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+
+        //bill amount is always the first responder
+        billAmountTextField.becomeFirstResponder()
     }
     
-    @IBAction func calculateTip( sender: Any) {
-        let bill = Double(billAmountTextField.text! ) ?? 0
-        let tipPercentages = [0.15,0.18,0.20]
-        let tip = bill * tipPercentages[tipControl.selectedSegmentIndex]
-        let total = bill + tip
+    func calculateTip() {
+        tc.tipPercentage = Double(tipAmountSlider.value) / 100.0
+        tc.billAmountBeforeTax = Double(billAmountTextField.text!) ?? 0
+        tc.calculateTip()
+        updateUI()
         
-        tipAmountLabel.text = String(format: "$.2f", tip)
-        totalLabel.text = String(format: ".2f", total)
     }
-
+    
+    func updateUI() {
+        tipAmountLabel.text = String( format: "$%.2f", tc.tipAmount)
+        totalLabel.text =  String( format: "$%.2f", tc.totalAmount)
+        let numOfPeople: Int = Int(splitSlider.value)
+        splitTotalLabel.text = String( format: "$%.2f", tc.totalAmount/Double(numOfPeople))
+        
+    }
+    
+    @IBAction func tipSliderChanged( sender: Any) {
+        tipAmountSliderValue.text = ("Tip: \(Int(tipAmountSlider.value))%")
+        calculateTip()
+    }
+    
+    @IBAction func splitSliderChanged( sender: Any) {
+        splitSliderValue.text = ("Split: \(Int(splitSlider.value))")
+        calculateTip()
+        
+    }
+    
+    @IBAction func billAmtChanged( sender: Any) {
+        calculateTip()
+    }
+    
+    
+    
+    
+    
+    
+    
 
 }
 
